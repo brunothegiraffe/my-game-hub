@@ -1,0 +1,81 @@
+header {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 12vh;
+  background-image: linear-gradient(to right, #000000, grey);
+}
+
+.gear_logo {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  position: relative;
+}
+
+.big_gear {
+  animation: rotate 5s linear infinite;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.med_gear {
+  animation: rotatemed 4s linear infinite reverse;
+  position: absolute;
+  top: 42px;
+  left: 40px;
+  height: 42px;
+  width: 42px;
+}
+
+.small_gear {
+  animation: rotatesmall 3s linear infinite;
+  position: absolute;
+  top: 65px;
+  left: 13px;
+  height: 35px;
+  width: 35px;
+}
+
+.main_container {
+  padding: 300px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.login_card {
+  height: 300px;
+  width: 200px;
+  background-image: linear-gradient(#000000, grey);
+  display: flex;
+  justify-content: center;
+  border-radius: 5%;
+}
+
+.login_btn {
+  height: 30px;
+  width: 100px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  text-align: center;
+  align-self: center;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg) 
+    }
+}
+@keyframes rotatemed {
+  to {
+      transform: rotate(360deg) 
+  }
+}
+@keyframes rotatesmall {
+  to {
+      transform: rotate(360deg) 
+  }
+}
