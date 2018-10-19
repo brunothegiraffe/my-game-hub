@@ -8,10 +8,10 @@ import Login from "./components/login/Login";
 export default (
   <div>
     <Switch>
-      <Route path="/" component={Dashboard} exact />
-      <Route path="/login" component={FindGames} />
+      <Route path="/" component={Login} exact />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/findgames" component={FindGames} />
       <Route path="/list" component={List} />
-      <Route path="/findgames" component={Login} />
     </Switch>
   </div>
 );

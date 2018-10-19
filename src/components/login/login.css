@@ -1,14 +1,30 @@
-header {
-  display: flex;
-  justify-content: flex-start;
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.container {
   width: 100vw;
-  height: 12vh;
-  background-image: linear-gradient(to right, #000000, grey);
+  height: 100vh;
+  background-image: linear-gradient(#000000, grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  background-image: linear-gradient(#000000, grey);
+  box-shadow: 1em 0.5em 1em black;
+  display: flex;
+  justify-content: center;
+  border-radius: 5%;
 }
 
 .gear_logo {
   height: 100px;
-  width: 100px;
+  width: 200px;
   margin: 5px;
   position: relative;
 }
@@ -40,42 +56,60 @@ header {
   width: 35px;
 }
 
-.main_container {
-  padding: 300px 0 0 0;
-  display: flex;
-  justify-content: center;
+.logo_text_my {
+  position: absolute;
+  font-weight: bold;
+  font-family: Roboto;
+  top: 18px;
+  left: 70px;
+  color: #027f55;
+  height: 25px;
+  width: 40px;
 }
 
-.login_card {
-  height: 300px;
-  width: 200px;
-  background-image: linear-gradient(#000000, grey);
-  display: flex;
-  justify-content: center;
-  border-radius: 5%;
+.logo_text_game {
+  position: absolute;
+  font-weight: bold;
+  font-family: Roboto;
+  top: 45px;
+  left: 85px;
+  color: #027f55;
+  height: 25px;
+  width: 50px;
+}
+
+.logo_text_hub {
+  position: absolute;
+  font-weight: bold;
+  font-family: Roboto;
+  top: 70px;
+  left: 110px;
+  color: #027f55;
+  height: 25px;
+  width: 40px;
 }
 
 .login_btn {
   height: 30px;
   width: 100px;
+  font-family: Roboto;
   background-color: whitesmoke;
   border: 1px solid black;
-  text-align: center;
   align-self: center;
 }
 
 @keyframes rotate {
-    to {
-        transform: rotate(360deg) 
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes rotatemed {
   to {
-      transform: rotate(360deg) 
+    transform: rotate(360deg);
   }
 }
 @keyframes rotatesmall {
   to {
-      transform: rotate(360deg) 
+    transform: rotate(360deg);
   }
 }

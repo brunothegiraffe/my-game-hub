@@ -12,11 +12,12 @@ class Login extends Component {
 
     window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri${uri}&response_type=code`;
   }
+  register() {}
 
   render() {
     return (
-      <div className="App">
-        <header className="header">
+      <div className="container">
+        <div className="login_card">
           <div className="gear_logo">
             <div className="big_gear">
               <img src={bigGear} alt="" />
@@ -27,13 +28,15 @@ class Login extends Component {
             <div className="small_gear">
               <img src={smallGear} alt="" />
             </div>
+            <div className="logo_text_my">My</div>
+            <div className="logo_text_game">Game</div>
+            <div className="logo_text_hub">Hub</div>
           </div>
-        </header>
-        <div className="main_container">
-          <div className="login_card">
-            <div className="login_btn" onClick={this.login.bind(this)}>
-              Login
-            </div>
+          <div className="login_btn" onClick={this.login.bind(this)}>
+            Login
+          </div>
+          <div className="register_btn" onClick={this.login.bind(this)}>
+            Register
           </div>
         </div>
       </div>

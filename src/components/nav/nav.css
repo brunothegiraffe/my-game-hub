@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.main_nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px, 400px, auto;
+  width: 100vw;
+  height: 12vh;
+  background-image: linear-gradient(to right, #000000, grey);
+  position: fixed;
+  text-align: center;
+}
+
+.gear_logo {
+  grid-column: 1 / 1;
+  height: 100px;
+  width: 200px;
+  margin: 5px;
+  position: relative;
+}
+
+.big_gear {
+  animation: rotate 5s linear infinite;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.med_gear {
+  animation: rotatemed 4s linear infinite reverse;
+  position: absolute;
+  top: 42px;
+  left: 40px;
+  height: 42px;
+  width: 42px;
+}
+
+.small_gear {
+  animation: rotatesmall 3s linear infinite;
+  position: absolute;
+  top: 65px;
+  left: 13px;
+  height: 35px;
+  width: 35px;
+}
+
+.logo_text_my {
+  position: absolute;
+  font-weight: bold;
+  font-family: Roboto;
+  top: 18px;
+  left: 70px;
+  color: #027f55;
+  height: 25px;
+  width: 40px;
+}
+
+.logo_text_game {
+  position: absolute;
+  font-weight: bold;
+  font-family: Roboto;
+  top: 45px;
+  left: 85px;
+  color: #027f55;
+  height: 25px;
+  width: 50px;
+}
+
+.logo_text_hub {
+  position: absolute;
+  font-weight: bold;
+  font-family: Roboto;
+  top: 70px;
+  left: 110px;
+  color: #027f55;
+  height: 25px;
+  width: 40px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+li {
+  color: whitesmoke;
+}
+
+li:hover {
+  color: grey;
+}
+
+.main_menu {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 20px;
+}
