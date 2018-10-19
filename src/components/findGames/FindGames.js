@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Nav from "../nav/Nav";
 import axios from "axios";
-import Game from "../game/Game";
+import "./findgames.css";
+// import Game from "../game/Game";
 
 class FindGames extends Component {
   searchGames(search) {
@@ -20,16 +22,15 @@ class FindGames extends Component {
   }
 
   render() {
-    let games = this.state.games.map((game, index) => {
-      return <Game {...game} key={index} />;
-    });
+    // let games = this.state.games.map((game, index) => {
+    //   return <Game {...game} key={index} />;
+    // });
     return (
-      <div className="main_container">
-        <input
-          placehodler="Find Games"
-          onChange={e => this.searchGames(e.target.value)}
-        />
-        {games}
+      <div className="findgames_container">
+        <Nav />
+        <div className="findgames_content_container">
+          <h1>Search results here</h1>
+        </div>
       </div>
     );
   }

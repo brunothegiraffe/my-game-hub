@@ -2,39 +2,41 @@ const axios = require("axios");
 const { REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET } = process.env;
 
 module.exports = {
-  authZero: async (req, res) => {
-    let payload = {
-      client_id: REACT_APP_CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      code: req.query.code,
-      grant_type: "authorization_code",
-      redirect_uri: `http://${req.headers.host}/auth/callback`
-    };
-    // post request with code for token
-    let tokenRes = await axios.post(
-      `https://${REACT_APP_DOMAIN}/oauth/token`,
-      payload
-    );
-    // use token to get user data
-    let userRes = await axios.get(
-      `https://${REACT_APP_DOMAIN}/userinfo?access_token=${
-        tokenRes.data.access_token
-      }`
-    );
+  login: (req, res) => {
+    console.log("hit the endpoint");
+    const { username, password } = req.body;
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .login_user([username, password])
+      .then(response => {
+        console.log(response);
+        {
+          req.session.userid = response[0].id;
+        }
+        res.status(200).send(response);
+      })
+      .catch(err => {
+        res.sendStatus(500);
+        console.log(err);
+      });
+  },
 
-    console.log(userRes.data);
+  registerUser: (req, res) => {
+    console.log("hit the endpoint");
+    const { username, password } = req.body;
+    console.log(`data: `, username, password);
 
-    const db = app.get("db");
-    let foundCustomer = await db.find_customer([sub]);
-    if (foundCustomer[0]) {
-      // found user existing in the db, put the returned user on session
-      req.session.user = foundCustomer[0];
-    } else {
-      // no user was found by that google id. create new user in db
-      let createdCust = await db.create_customer([name, sub, picture, email]);
-      req.session.user = createdCust[0];
-    }
-    res.redirect("/#/private");
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .register_user([email, username, password])
+      .then(response => {
+        console.log(response);
+        res.status(200).send(response);
+      })
+      .catch(err => {
+        res.sendStatus(500);
+        console.log(err);
+      });
   },
 
   getGames: (req, res) => {

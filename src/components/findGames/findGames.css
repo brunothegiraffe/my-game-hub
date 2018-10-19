@@ -1,0 +1,12 @@
+.findgames_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.findgames_content_container {
+  height: 100vh;
+  width: 100vw;
+  margin-left: 190px;
+  background-color: whitesmoke;
+}

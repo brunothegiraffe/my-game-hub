@@ -5,9 +5,10 @@ import "./Dashboard.css";
 class Dashboard extends Component {
   render() {
     return (
-      <div className="main_container">
-        <div className="nav_container">
-          <Nav />
+      <div className="dashboard_container">
+        <Nav />
+        <div className="dashboard_content_container">
+          <h1>Content will go here</h1>
         </div>
       </div>
     );

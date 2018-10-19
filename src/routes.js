@@ -11,7 +11,7 @@ export default (
       <Route path="/" component={Login} exact />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/findgames" component={FindGames} />
-      <Route path="/list" component={List} />
+      <Route path="/lists" component={List} />
     </Switch>
   </div>
 );

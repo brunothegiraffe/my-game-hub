@@ -5,6 +5,7 @@ const axios = require("axios");
 const massive = require("massive");
 const ctrl = require("./controller");
 const bodyParser = require("body-parser");
+const bycrypt = require("bcryptjs");
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(
 );
 
 app.get("/auth/callback", ctrl.authZero);
+app.get("/api/user-data", ctrl.login);
+app.post("/api/register-user", ctrl.registerUser);
 app.get("/api/gbgames", ctrl.getGames);
 
 app.listen(SERVER_PORT, () => console.log(`Docked at port: ${SERVER_PORT}`));

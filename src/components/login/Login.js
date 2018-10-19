@@ -1,18 +1,15 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import bigGear from "./images/gear_big.svg";
 import medGear from "./images/gear_medium.svg";
 import smallGear from "./images/gear_small.svg";
 import "./login.css";
 
 class Login extends Component {
-  login() {
-    let { REACT_APP_DOMAIN, REACT_APP_CLIENT_ID } = process.env;
-
-    let uri = `${encodeURIComponent(window.location.origin)}/auth/callback`;
-
-    window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri${uri}&response_type=code`;
-  }
+  login() {}
   register() {}
+
+  handleInputs() {}
 
   render() {
     return (
@@ -32,11 +29,22 @@ class Login extends Component {
             <div className="logo_text_game">Game</div>
             <div className="logo_text_hub">Hub</div>
           </div>
-          <div className="login_btn" onClick={this.login.bind(this)}>
-            Login
+          <div className="input_boxes">
+            <input className="email" placeholder="Email" type="text" />
+            <input className="username" placeholder="Username" type="text" />
+            <input
+              className="password"
+              placeholder="Password"
+              type="password"
+            />
           </div>
-          <div className="register_btn" onClick={this.login.bind(this)}>
-            Register
+          <div className="buttons">
+            <button className="login_btn" onClick={this.login.bind(this)}>
+              Login
+            </button>
+            <button className="register_btn" onClick={this.login.bind(this)}>
+              Register
+            </button>
           </div>
         </div>
       </div>
@@ -44,4 +52,10 @@ class Login extends Component {
   }
 }
 
-export default Login;
+// function mapStateToProps(state) {
+//   return {
+//     user: state.user
+//   };
+// }
+
+export default connect()(Login);

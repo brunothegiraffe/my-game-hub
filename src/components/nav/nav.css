@@ -1,90 +1,41 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 .main_nav {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 200px, 400px, auto;
-  width: 100vw;
-  height: 12vh;
-  background-image: linear-gradient(to right, #000000, grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 190px;
+  height: 100vh;
+  box-shadow: 5px 5px 5px black;
+  background-image: linear-gradient(#000000, #9bc848);
   position: fixed;
-  text-align: center;
 }
 
-.gear_logo {
-  grid-column: 1 / 1;
-  height: 100px;
-  width: 200px;
-  margin: 5px;
-  position: relative;
+.user_info {
+  height: 150px;
+  width: 170px;
+  margin: 5px 0 5px 0;
+  border: 1px solid white;
 }
 
-.big_gear {
-  animation: rotate 5s linear infinite;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  height: 50px;
-  width: 50px;
-}
-
-.med_gear {
-  animation: rotatemed 4s linear infinite reverse;
-  position: absolute;
-  top: 42px;
-  left: 40px;
-  height: 42px;
-  width: 42px;
-}
-
-.small_gear {
-  animation: rotatesmall 3s linear infinite;
-  position: absolute;
-  top: 65px;
-  left: 13px;
-  height: 35px;
-  width: 35px;
-}
-
-.logo_text_my {
-  position: absolute;
-  font-weight: bold;
-  font-family: Roboto;
-  top: 18px;
-  left: 70px;
-  color: #027f55;
-  height: 25px;
-  width: 40px;
-}
-
-.logo_text_game {
-  position: absolute;
-  font-weight: bold;
-  font-family: Roboto;
-  top: 45px;
-  left: 85px;
-  color: #027f55;
-  height: 25px;
-  width: 50px;
-}
-
-.logo_text_hub {
-  position: absolute;
-  font-weight: bold;
-  font-family: Roboto;
-  top: 70px;
-  left: 110px;
-  color: #027f55;
-  height: 25px;
-  width: 40px;
+.ul_container {
+  height: 750px;
+  width: 170px;
+  margin: 5px 0 0 0;
+  border: 1px solid black;
+  display: flex;
 }
 
 ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 li {

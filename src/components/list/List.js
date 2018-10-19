@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import Game from "../game/Game";
+import Nav from "../nav/Nav";
+import "./list.css";
+// import Game from "../game/Game";
 
 class List extends Component {
   searchGames(search) {
@@ -24,12 +26,11 @@ class List extends Component {
     //   return <Game {...game} key={index} />;
     // });
     return (
-      <div className="main_container">
-        <input
-          placehodler="Find Games"
-          onChange={e => this.searchGames(e.target.value)}
-        />
-        {/* {games} */}
+      <div className="list_container">
+        <Nav />
+        <div className="list_content_container">
+          <h1>lists will go here</h1>
+        </div>
       </div>
     );
   }
