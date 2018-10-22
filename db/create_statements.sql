@@ -5,3 +5,11 @@
 -- )
 -- WITH (OIDS=FALSE);
 -- ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+-- CREATE TABLE "users" (
+--     "id" SERIAL PRIMARY KEY,
+--     "username" VARCHAR(30) UNIQUE NOT NULL,
+--     "email" VARCHAR(30) UNIQUE NOT NULL,
+--     "password" VARCHAR NOT NULL,
+--     "avatar" TEXT
+-- );
