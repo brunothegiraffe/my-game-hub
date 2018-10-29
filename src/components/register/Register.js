@@ -35,12 +35,6 @@ class Register extends Component {
         .then(result => {
           console.log(result);
           this.props.history.push("/");
-          this.setState({
-            email: "",
-            username: "",
-            password: "",
-            confirmPassword: ""
-          });
         })
         .catch(err => {
           console.log(err);
@@ -77,7 +71,7 @@ class Register extends Component {
             <div className="logo_text_game">Game</div>
             <div className="logo_text_hub">Hub</div>
           </div>
-          <div className="input_boxes">
+          <div className="register_input_boxes">
             <input
               onChange={this.handleInputs}
               value={this.state.email}

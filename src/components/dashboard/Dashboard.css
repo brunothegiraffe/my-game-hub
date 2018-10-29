@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 .dashboard_container {
   display: flex;
   justify-content: flex-start;
@@ -9,4 +11,43 @@
   width: 100vw;
   margin-left: 190px;
   background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:hover.personal_info {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px black;
+}
+
+.personal_info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  width: 600px;
+  background-color: whitesmoke;
+  border-radius: 5%;
+}
+
+.avatar {
+  width: 100px;
+}
+
+.header_and_inputs {
+  height: 150px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.submit_cancel_btns {
+  height: 75px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

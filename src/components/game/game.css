@@ -1,0 +1,23 @@
+:hover.game_card {
+  background-color: #7a7474;
+  margin: 5px;
+  border-radius: 10%;
+  box-shadow: 1em 0.5em 1em black;
+}
+.game_card {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  width: 250px;
+  height: 250px;
+}
+.game_image {
+  align-self: center;
+  width: 100px;
+}
+.game_button {
+  align-self: center;
+  width: 100px;
+}

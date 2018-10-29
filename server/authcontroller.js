@@ -36,9 +36,9 @@ module.exports = {
       });
   },
   getUser: (req, res) => {
+    const db = req.app.get("db");
     const { userID } = req.params;
-    req.db
-      .get_user(userID)
+    db.get_user(userID)
       .then(([user]) => {
         if (!user) {
           res.status(404).send({ error: "Invalid User ID" });
@@ -54,14 +54,14 @@ module.exports = {
   logout: (req, res) => {
     if (req.session.user) {
       req.session.destroy();
-      res.status(200).send({ message: "You have logged out." });
+      res.status(200).send({ message: "Succesfully logged out." });
     }
   },
   verifyAuth: (req, res) => {
     if (req.session.user) {
       res.status(200).send(req.session.user);
     } else {
-      res.status(401).send({ message: "You are not logged in." });
+      res.status(401).send({ message: "Please log in." });
     }
   }
 };

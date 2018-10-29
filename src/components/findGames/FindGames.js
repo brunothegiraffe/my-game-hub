@@ -1,15 +1,26 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import Nav from "../nav/Nav";
 import axios from "axios";
 import "./findgames.css";
-// import Game from "../game/Game";
+import Game from "../game/Game";
 
 class FindGames extends Component {
-  searchGames(search) {
-    console.log(`Searching: ${search}`);
+  constructor() {
+    super();
+
+    this.state = {
+      searchString: "",
+      games: []
+    };
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+  handleSearch(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  searchGames(searchString) {
+    console.log(`Searching: ${searchString}`);
     axios
-      .get(`/api/gbgames?search=${search}`)
+      .get(`/api/gbgames?search=${searchString}`)
       .then(response => {
         console.log(response.data);
         this.setState({
@@ -22,25 +33,35 @@ class FindGames extends Component {
   }
 
   render() {
-    // let games = this.state.games.map((game, index) => {
-    //   return <Game {...game} key={index} />;
-    // });
+    console.log(this.state);
+    let games = this.state.games.map((game, id) => {
+      return <Game {...game} key={id} />;
+    });
     return (
       <div className="findgames_container">
         <Nav />
         <div className="findgames_content_container">
-          <h1>Search results here</h1>
+          <div className="search_container">
+            <input
+              onChange={this.handleSearch}
+              name="searchString"
+              value={this.state.searchString}
+              placeholder="Find Games"
+            />
+            <button
+              onClick={() => this.searchGames(this.state.searchString)}
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+          <div className="findgames_displayed_games">
+            <div className="displayed_games">{games}</div>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export function mapStateToProps(state) {}
-
-const actionCreators = {};
-
-export default connect(
-  mapStateToProps,
-  actionCreators
-)(FindGames);
+export default FindGames;

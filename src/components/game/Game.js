@@ -1,4 +1,5 @@
 import React from "react";
+import "./game.css";
 
 function Game(props) {
   const game = {

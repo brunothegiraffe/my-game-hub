@@ -40,12 +40,12 @@ app.use(
   })
 );
 
-app.get("/api/gbgames", ctrl.getGames);
+app.get(`/api/gbgames`, ctrl.getGames);
 // auth routes
 app.post("/auth/register", authctrl.register);
 app.post("/auth/login", authctrl.login);
 // app.get("/auth/userauth", authctrl.verifyAuth);
-// app.get("/auth/info/:userID", authctrl.getUser);
-// app.post("/auth/logout", authctrl.logout);
+// app.get("/api/info/:userID", authctrl.getUser);
+app.get("/auth/logout", authctrl.logout);
 
 app.listen(SERVER_PORT, () => console.log(`Docked at port: ${SERVER_PORT}`));
