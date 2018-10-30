@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { updateUser } from "../../dux/reducer";
 import axios from "axios";
 import Nav from "../nav/Nav";
 import "./list.css";
 // import Game from "../game/Game";
 
 class List extends Component {
+  componentDidMount() {
+    axios.get("/api/getuserinfo").then(response => {
+      this.props.updateUser(response.data);
+    });
+  }
   searchGames(search) {
     console.log(`Searching: ${search}`);
     axios
@@ -36,11 +42,7 @@ class List extends Component {
   }
 }
 
-export function mapStateToProps(state) {}
-
-const actionCreators = {};
-
 export default connect(
-  mapStateToProps,
-  actionCreators
+  null,
+  { updateUser }
 )(List);

@@ -19,7 +19,6 @@ class Login extends Component {
     this.handleInputs = this.handleInputs.bind(this);
   }
   login() {
-    console.log("login function");
     const user = {
       username: this.state.username,
       password: this.state.password
@@ -45,7 +44,6 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="container">
         <div className="login_card">

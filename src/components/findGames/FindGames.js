@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { updateUser } from "../../dux/reducer";
 import Nav from "../nav/Nav";
 import axios from "axios";
 import "./findgames.css";
@@ -13,6 +15,12 @@ class FindGames extends Component {
       games: []
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.addToOwned = this.addToOwned.bind(this);
+  }
+  componentDidMount() {
+    axios.get("/api/getuserinfo").then(response => {
+      this.props.updateUser(response.data);
+    });
   }
   handleSearch(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -31,11 +39,26 @@ class FindGames extends Component {
         return console.log(`Not getting data, ${err}`);
       });
   }
+  addToOwned(e, game) {
+    console.log(game);
+    e.preventDefault();
+    console.log(`Adding to owned to list: ${game.id}`);
+    return axios
+      .post("/api/ownedList", game)
+      .then(response => {
+        this.setState({
+          gamesOwned: response.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   render() {
     console.log(this.state);
     let games = this.state.games.map((game, id) => {
-      return <Game {...game} key={id} />;
+      return <Game {...game} key={id} addToOwned={this.addToOwned} />;
     });
     return (
       <div className="findgames_container">
@@ -64,4 +87,7 @@ class FindGames extends Component {
   }
 }
 
-export default FindGames;
+export default connect(
+  null,
+  { updateUser }
+)(FindGames);

@@ -41,6 +41,9 @@ app.use(
 );
 
 app.get(`/api/gbgames`, ctrl.getGames);
+app.put(`/api/updateinfo`, ctrl.updateInfo);
+app.post(`/api/addtoowned`, ctrl.addOwned);
+app.get("/api/getuserinfo", ctrl.getUserInfo);
 // auth routes
 app.post("/auth/register", authctrl.register);
 app.post("/auth/login", authctrl.login);

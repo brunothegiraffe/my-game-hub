@@ -13,7 +13,7 @@ module.exports = {
           api_key: process.env.GB_KEY,
           resources: "game",
           query: search,
-          limit: 10,
+          limit: 15,
           format: "JSON"
         }
       })
@@ -26,5 +26,29 @@ module.exports = {
         console.log(err);
         res.status(err.response.status).send(err.response.data);
       });
+  },
+  updateInfo: (req, res) => {
+    console.log(req.body);
+    const { id, username, email } = req.body.user;
+    console.log("data:", username, email);
+
+    const dbInstance = req.app.get("db");
+    dbInstance
+      .update_info([id, username, email])
+      .then(response => {
+        console.log(response);
+        res.status(200).send(response);
+      })
+      .catch(err => {
+        res.sendStatus(500);
+        console.log(err);
+      });
+  },
+  addOwned: (req, res) => {
+    console.log(`Adding new game to list: ${req.body.id}`);
+    res.status(201).send(ownedGames);
+  },
+  getUserInfo: (req, res) => {
+    res.status(200).send(req.session.user);
   }
 };

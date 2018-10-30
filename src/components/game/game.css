@@ -1,11 +1,11 @@
 :hover.game_card {
   background-color: #7a7474;
+  border: 1px solid black;
   margin: 5px;
   border-radius: 10%;
-  box-shadow: 1em 0.5em 1em black;
 }
 .game_card {
-  margin: 20px 0px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -15,7 +15,7 @@
 }
 .game_image {
   align-self: center;
-  width: 100px;
+  height: 70px;
 }
 .game_button {
   align-self: center;

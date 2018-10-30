@@ -14,7 +14,6 @@
   height: 150px;
   width: 170px;
   margin: 5px 0 5px 0;
-  border: 1px solid white;
 }
 
 .user_avatar {
@@ -25,7 +24,6 @@
   height: 750px;
   width: 170px;
   margin: 5px 0 0 0;
-  border: 1px solid black;
   display: flex;
 }
 
