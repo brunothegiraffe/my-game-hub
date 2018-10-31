@@ -17,9 +17,14 @@
 -- update users set username='newname', email='new@name.com'
 -- where id = 2;
 
--- create table game(
---     id serial primary key,
---     user_id INTEGER references users,
---     title text not null,
+-- CREATE TABLE game(
+--     id SERIAL PRIMARY KEY,
+--     title varchar(250) not null UNIQUE,
 --     img text
+-- );
+
+-- create table user_game(
+--     user_id INT REFERENCES users,
+--     game_id INT REFERENCES game
 -- )
+

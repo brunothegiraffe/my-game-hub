@@ -27,6 +27,19 @@ module.exports = {
         res.status(err.response.status).send(err.response.data);
       });
   },
+  getOwnedGames: (req, res) => {
+    console.log("hit the getOwnedGames endpoint");
+    const dbInstance = req.app.get("db");
+    const { id } = req.session.user.id;
+    dbInstance
+      .get_owned_games([id])
+      .then(response => {
+        res.status(200).send(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
   updateInfo: (req, res) => {
     console.log(req.body);
     const { id, username, email } = req.body.user;
@@ -45,8 +58,17 @@ module.exports = {
       });
   },
   addOwned: (req, res) => {
-    console.log(`Adding new game to list: ${req.body.id}`);
-    res.status(201).send(ownedGames);
+    const dbInstance = req.app.get("db");
+    const { name, image } = req.body.ownedGame;
+
+    dbInstance
+      .add_game_to_owned([name, image])
+      .then(response => {
+        res.status(200).send(response);
+      })
+      .catch(err => {
+        res.status(500).send(err);
+      });
   },
   getUserInfo: (req, res) => {
     res.status(200).send(req.session.user);

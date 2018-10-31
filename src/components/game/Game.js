@@ -16,7 +16,7 @@ function Game(props) {
         <button
           className="game_button"
           type="submit"
-          onClick={e => props.addToOwned(e, game)}
+          onClick={e => props.addToOwned(game)}
         >
           Add to Owned
         </button>

@@ -15,19 +15,20 @@
 }
 
 .search_container {
-  border: 1px solid black;
   height: 50px;
   width: 300px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+
 .findgames_displayed_games {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .displayed_games {
   display: flex;
   flex-direction: row;
