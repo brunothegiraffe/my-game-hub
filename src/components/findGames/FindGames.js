@@ -43,7 +43,7 @@ class FindGames extends Component {
     console.log(game);
     let ownedGame = {
       name: game.name,
-      image: game.image.small_url
+      image: game.image
     };
     console.log(`Adding to owned to list: ${game.id}`);
     axios.post("/api/addtoowned", { ownedGame }).catch(err => {

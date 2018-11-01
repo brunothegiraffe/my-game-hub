@@ -30,11 +30,12 @@ module.exports = {
   getOwnedGames: (req, res) => {
     console.log("hit the getOwnedGames endpoint");
     const dbInstance = req.app.get("db");
-    const { id } = req.session.user.id;
+    const id = req.session.user.id;
     dbInstance
-      .get_owned_games([id])
+      .get_owned_games(id)
       .then(response => {
         res.status(200).send(response);
+        console.log();
       })
       .catch(err => {
         console.log(err);
@@ -60,9 +61,10 @@ module.exports = {
   addOwned: (req, res) => {
     const dbInstance = req.app.get("db");
     const { name, image } = req.body.ownedGame;
+    const id = req.session.user.id;
 
     dbInstance
-      .add_game_to_owned([name, image])
+      .add_game_to_owned([name, image, id])
       .then(response => {
         res.status(200).send(response);
       })

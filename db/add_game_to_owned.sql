@@ -1,3 +1,3 @@
 insert into game
-    (title, img)
-values($1, $2);
+    (title, image, owner_id)
+values($1, $2, $3);
