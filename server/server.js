@@ -17,6 +17,8 @@ massive(CONNECTION_STRING).then(db => {
   console.log("db connected");
   app.set("db", db);
 });
+const path = require("path");
+app.use(express.static(`${__dirname}/../build`));
 
 app.use(bodyParser.json());
 app.use(helmet());
@@ -51,5 +53,6 @@ app.post("/auth/login", authctrl.login);
 // app.get("/auth/userauth", authctrl.verifyAuth);
 // app.get("/api/info/:userID", authctrl.getUser);
 app.get("/auth/logout", authctrl.logout);
+// for build production
 
 app.listen(SERVER_PORT, () => console.log(`Docked at port: ${SERVER_PORT}`));
