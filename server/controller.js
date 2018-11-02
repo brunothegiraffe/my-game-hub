@@ -51,7 +51,7 @@ module.exports = {
       .update_info([id, username, email])
       .then(response => {
         console.log(response);
-        res.status(200).send(response);
+        res.status(200).send(response[0]);
       })
       .catch(err => {
         res.sendStatus(500);
@@ -59,6 +59,7 @@ module.exports = {
       });
   },
   addOwned: (req, res) => {
+    console.log("hit the addowned endpoint");
     const dbInstance = req.app.get("db");
     const { name, image } = req.body.ownedGame;
     const id = req.session.user.id;
@@ -74,5 +75,21 @@ module.exports = {
   },
   getUserInfo: (req, res) => {
     res.status(200).send(req.session.user);
+  },
+  removeGame: (req, res, next) => {
+    console.log("hit the delete endpoint");
+    const dbInstance = req.app.get("db");
+    const { gameid } = req.params;
+    const owner_id = req.session.user.id;
+
+    dbInstance
+      .delete_game([gameid, owner_id])
+      .then(() => {
+        next();
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).send(err);
+      });
   }
 };

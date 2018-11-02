@@ -13,13 +13,23 @@ function Game(props) {
       <div className="game_card">
         <p className="game_name">{props.name}</p>
         <img className="game_image" src={props.image.small_url} alt="" />
-        <button
-          className="game_button"
-          type="submit"
-          onClick={e => props.addToOwned(game)}
-        >
-          Add to Owned
-        </button>
+        {props.deletable ? (
+          <button
+            className="game_button"
+            type="submit"
+            onClick={e => props.deleteGame(props.id)}
+          >
+            Remove Game
+          </button>
+        ) : (
+          <button
+            className="game_button"
+            type="submit"
+            onClick={e => props.addToOwned(game)}
+          >
+            Add to Owned
+          </button>
+        )}
       </div>
     </div>
   );

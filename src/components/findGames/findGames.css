@@ -4,7 +4,7 @@
 }
 
 .findgames_content_container {
-  height: 100%;
+  min-height: 100vh;
   width: 100vw;
   margin-left: 190px;
   background-color: whitesmoke;
@@ -34,4 +34,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+@media (max-width: 450px) {
 }

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateUser, addGame } from "../../dux/reducer";
+import { updateUser } from "../../dux/reducer";
 import Nav from "../nav/Nav";
+import MobileNav from "../mobileNav/MobileNav";
 import axios from "axios";
 import "./findgames.css";
 import Game from "../game/Game";
@@ -45,7 +46,6 @@ class FindGames extends Component {
       name: game.name,
       image: game.image
     };
-    console.log(`Adding to owned to list: ${game.id}`);
     axios.post("/api/addtoowned", { ownedGame }).catch(err => {
       console.log(err);
     });
@@ -58,6 +58,7 @@ class FindGames extends Component {
     return (
       <div className="findgames_container">
         <Nav />
+        <MobileNav />
         <div className="findgames_content_container">
           <div className="search_container">
             <input
@@ -82,13 +83,7 @@ class FindGames extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    game: state.game
-  };
-}
-
 export default connect(
-  mapStateToProps,
-  { updateUser, addGame }
+  null,
+  { updateUser }
 )(FindGames);

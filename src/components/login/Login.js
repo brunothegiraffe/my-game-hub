@@ -23,20 +23,27 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password
     };
-    axios
-      .post("/auth/login", user)
-      .then(response => {
-        const user = response.data;
-        if (user.id) {
-          this.props.updateUser(response.data);
-          this.props.history.push("/dashboard");
-        } else {
-          alert("Please enter valid login credentials");
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    const { username, password } = this.state;
+    if (username && password) {
+      axios
+        .post("/auth/login", user)
+        .then(response => {
+          const user = response.data;
+          if (user.id) {
+            this.props.updateUser(response.data);
+            this.props.history.push("/dashboard");
+          } else {
+            alert("Please enter valid login credentials");
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else if (!username) {
+      alert("Username must not be blank");
+    } else if (!password) {
+      alert("Password must not be blank");
+    }
   }
 
   handleInputs(e) {

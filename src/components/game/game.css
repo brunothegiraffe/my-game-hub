@@ -21,3 +21,5 @@
   align-self: center;
   width: 100px;
 }
+@media (max-width: 450px) {
+}

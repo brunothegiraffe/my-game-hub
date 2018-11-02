@@ -52,3 +52,9 @@ li:hover {
   font-weight: bold;
   font-size: 20px;
 }
+
+@media (max-width: 450px) {
+  .main_nav {
+    display: none;
+  }
+}

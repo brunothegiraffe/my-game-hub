@@ -4,6 +4,7 @@ import { updateUser } from "../../dux/reducer";
 import Nav from "../nav/Nav";
 import axios from "axios";
 import "./Dashboard.css";
+import MobileNav from "../mobileNav/MobileNav";
 
 class Dashboard extends Component {
   constructor() {
@@ -49,7 +50,7 @@ class Dashboard extends Component {
     let { username, avatar } = this.props.user;
     return (
       <div className="dashboard_container">
-        <Nav />
+        <Nav />><MobileNav />
         <div className="dashboard_content_container">
           <div className="personal_info">
             <h1>

@@ -2,4 +2,5 @@ update users set username=$2, email=$3
 where id = $1;
 
 select *
-from users;
+from users
+where id = $1;

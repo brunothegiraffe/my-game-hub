@@ -47,6 +47,7 @@ app.put(`/api/updateinfo`, ctrl.updateInfo);
 app.post(`/api/addtoowned`, ctrl.addOwned);
 app.get("/api/getuserinfo", ctrl.getUserInfo);
 app.get("/api/getownedgames", ctrl.getOwnedGames);
+app.delete(`/api/removefromowned/:gameid`, ctrl.removeGame, ctrl.getOwnedGames);
 // auth routes
 app.post("/auth/register", authctrl.register);
 app.post("/auth/login", authctrl.login);
