@@ -33,6 +33,11 @@
   font-size: 15px;
   list-style: none;
 }
+
+.main_hover_menu {
+  padding-left: 0;
+}
+
 @media (min-width: 450px) {
   .main_mobile_nav {
     display: none;

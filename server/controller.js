@@ -51,7 +51,8 @@ module.exports = {
       .update_info([id, username, email])
       .then(response => {
         console.log(response);
-        res.status(200).send(response[0]);
+        req.session.user = response[0];
+        res.status(200).send(req.session.user);
       })
       .catch(err => {
         res.sendStatus(500);

@@ -22,10 +22,10 @@ class Nav extends Component {
               <li>Dashboard</li>
             </Link>
             <Link to="/lists">
-              <li>View My Games</li>
+              <li>My Games</li>
             </Link>
             <Link to="/findgames">
-              <li>Find a Game</li>
+              <li>Find Games</li>
             </Link>
             <li onClick={this.logout.bind(this)}>Logout</li>
           </ul>

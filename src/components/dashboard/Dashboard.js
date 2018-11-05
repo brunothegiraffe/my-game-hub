@@ -37,6 +37,10 @@ class Dashboard extends Component {
       .then(response => {
         console.log(response.data);
         this.props.updateUser(response.data);
+        this.setState({
+          username: "",
+          email: ""
+        });
       })
       .catch(err => {
         console.log(err);
