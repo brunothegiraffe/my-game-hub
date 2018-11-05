@@ -4,7 +4,7 @@ import { updateUser } from "../../dux/reducer";
 import Nav from "../nav/Nav";
 import MobileNav from "../mobileNav/MobileNav";
 import axios from "axios";
-import "./findgames.css";
+import "./findGames.css";
 import Game from "../game/Game";
 
 class FindGames extends Component {
