@@ -50,7 +50,8 @@ class Dashboard extends Component {
     let { username, avatar } = this.props.user;
     return (
       <div className="dashboard_container">
-        <Nav />><MobileNav />
+        <Nav />
+        <MobileNav />
         <div className="dashboard_content_container">
           <div className="personal_info">
             <h1>

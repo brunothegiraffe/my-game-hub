@@ -35,5 +35,48 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 @media (max-width: 450px) {
+  .findgames_container {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .findgames_content_container {
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search_container {
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .findgames_displayed_games {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .displayed_games {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }

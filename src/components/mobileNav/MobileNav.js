@@ -17,15 +17,17 @@ class MobileNav extends Component {
         <div className="hover_menu">
           <ul className="main_hover_menu">
             <Link to="/dashboard">
-              <li>Dashboard</li>
+              <li className="mobile_li">Dashboard</li>
             </Link>
             <Link to="/lists">
-              <li>My Games</li>
+              <li className="mobile_li">My Games</li>
             </Link>
             <Link to="/findgames">
-              <li>Find Games</li>
+              <li className="mobile_li">Find Games</li>
             </Link>
-            <li onClick={this.logout.bind(this)}>Logout</li>
+            <li className="mobile_li" onClick={this.logout.bind(this)}>
+              Logout
+            </li>
           </ul>
         </div>
       </div>

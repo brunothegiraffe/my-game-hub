@@ -7,33 +7,31 @@
   background-color: whitesmoke;
   width: 100px;
   height: 100px;
-  position: fixed;
 }
 .mobile_avatar {
   height: 75px;
 }
+
 .hover_menu {
   display: none;
-  background-image: linear-gradient(#000000, grey);
+  background-color: whitesmoke;
 }
 .main_mobile_nav:hover .hover_menu {
   position: absolute;
   overflow: visible;
-  display: flex;
-  justify-content: column;
-  align-items: center;
-}
-ul {
-  list-style: none;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+}
+.mobile_li {
+  color: black;
 }
 .main_mobile_nav {
   font-family: Roboto;
-
   font-size: 15px;
+  list-style: none;
 }
 @media (min-width: 450px) {
   .main_mobile_nav {

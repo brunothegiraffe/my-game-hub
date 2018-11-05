@@ -7,13 +7,11 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 
 export default (
-  <div>
-    <Switch>
-      <Route path="/" component={Login} exact />
-      <Route path="/register" component={Register} />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/findgames" component={FindGames} />
-      <Route path="/lists" component={List} />
-    </Switch>
-  </div>
+  <Switch>
+    <Route path="/" component={Login} exact />
+    <Route path="/register" component={Register} />
+    <Route path="/dashboard" component={Dashboard} />
+    <Route path="/findgames" component={FindGames} />
+    <Route path="/lists" component={List} />
+  </Switch>
 );

@@ -13,7 +13,7 @@ module.exports = {
           api_key: process.env.GB_KEY,
           resources: "game",
           query: search,
-          limit: 15,
+          limit: 50,
           format: "JSON"
         }
       })
